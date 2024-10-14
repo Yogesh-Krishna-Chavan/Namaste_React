@@ -1,4 +1,4 @@
-const heading = React.createElement(
+const heading = React.createElement( 
   "h1",
   { id: "heading" },
   "Hello World From React"
@@ -6,7 +6,7 @@ const heading = React.createElement(
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(heading);
 
-// console.log(heading);
+// console.log(heading); 
 
 /*
 Parent-Child structure
@@ -66,6 +66,7 @@ Parent-Child structure with 2 child with sibling
     </div>
 </div>
 */
+
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child1" }, [
     React.createElement("h1", {}, "I am h1 tag"),
