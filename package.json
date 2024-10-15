@@ -1,0 +1,25 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "This is Namaste React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yogesh-Krishna-Chavan/Namaste_React.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Yogesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yogesh-Krishna-Chavan/Namaste_React/issues"
+  },
+  "homepage": "https://github.com/Yogesh-Krishna-Chavan/Namaste_React#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
