@@ -9,6 +9,8 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+
   console.log("Rendered");
 
   useEffect(() => {
@@ -28,6 +30,10 @@ const Body = () => {
     // );
 
     setListOfRestraunt(
+      //Optional Chaining
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurant(
       //Optional Chaining
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -57,6 +63,12 @@ const Body = () => {
               //Filter restaurant and update UI
               //Search Text
               console.log(searchText);
+
+              const filteredRestaurant = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+
+              setFilteredRestaurant(filteredRestaurant);
             }}
           >
             Search
@@ -77,7 +89,7 @@ const Body = () => {
         </button>
       </div>
       <div className="restro-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
