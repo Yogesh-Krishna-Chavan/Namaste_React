@@ -1,6 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+
+/*
+#Header
+  -Logo
+  -Nav Items
+
+#Body
+  -
+
+#Footer
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 const heading = React.createElement(
   "h1",
   { id: "heading" },
