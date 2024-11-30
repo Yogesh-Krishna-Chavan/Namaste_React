@@ -67,6 +67,7 @@ const HeadingComponent3 = () => (
   </div>
 );
 */
+
 const Header = () => {
   return (
     <div className="header">
@@ -92,12 +93,89 @@ const styleCard = {
   backgroundColor: "#f0f0f0",
 };
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  const { resData } = props;
   return (
     <div className="res-card" style={styleCard}>
-      <h3>Shaurya-Wada</h3>
+      <img
+        className="Burger"
+        alt="Burger King"
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resData.info.cloudinaryImageId
+        }
+      ></img>
+      <h3>{resData.info.name}</h3>
+      <h4>{resData.info.cuisines.join(", ")}</h4>
+      <h4>{resData.info.avgRating}</h4>
+      <h4>{resData.info.costForTwo}</h4>
     </div>
   );
+};
+
+const resObj = {
+  info: {
+    id: "234875",
+    name: "Adil Hotel",
+    cloudinaryImageId: "gp1ityra6utvzqn6ghnv",
+    locality: "Rautha Wada",
+    areaName: "Chhindwara Locality",
+    costForTwo: "₹150 for two",
+    cuisines: ["North Indian", "Biryani"],
+    avgRating: 4.3,
+    parentId: "27123",
+    avgRatingString: "4.3",
+    totalRatingsString: "1.0K+",
+    sla: {
+      deliveryTime: 43,
+      lastMileTravel: 10.8,
+      serviceability: "SERVICEABLE",
+      slaString: "40-45 mins",
+      lastMileTravelString: "10.8 km",
+      iconType: "ICON_TYPE_EMPTY",
+    },
+    availability: {
+      nextCloseTime: "2024-12-01 23:00:00",
+      opened: true,
+    },
+    badges: {},
+    isOpen: true,
+    type: "F",
+    badgesV2: {
+      entityBadges: {
+        imageBased: {},
+        textBased: {},
+        textExtendedBadges: {},
+      },
+    },
+    aggregatedDiscountInfoV3: {
+      header: "₹150 OFF",
+      subHeader: "ABOVE ₹349",
+      discountTag: "FLAT DEAL",
+    },
+    differentiatedUi: {
+      displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      differentiatedUiMediaDetails: {
+        lottie: {},
+        video: {},
+      },
+    },
+    reviewsSummary: {},
+    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    restaurantOfferPresentationInfo: {},
+    externalRatings: {
+      aggregatedRating: {
+        rating: "--",
+      },
+    },
+    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+  },
+  analytics: {
+    context: "seo-data-f3953dd1-567f-42be-bdab-79b0423d66bc",
+  },
+  cta: {
+    link: "https://www.swiggy.com/city/chhindwara/adil-hotel-rautha-wada-chhindwara-locality-rest234875",
+    type: "WEBLINK",
+  },
 };
 
 const Body = () => {
@@ -106,7 +184,7 @@ const Body = () => {
       <div className="search">Search</div>
       <div className="restro-container">
         {/*Create Restro component for reuse */}
-        <RestaurantCard />
+        <RestaurantCard resData={resObj} />
       </div>
     </div>
   );

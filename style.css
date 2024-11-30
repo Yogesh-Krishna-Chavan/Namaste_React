@@ -24,10 +24,28 @@
 
 .res-card {
   width: 200px;
-  height: 300px;
+  height: 380px;
+  padding: 5px;
+}
+
+.res-card:hover {
+  cursor: pointer;
   border: 1px solid black;
 }
 
 .search {
+  padding: 10px;
+}
+
+.Burger {
+  width: 190px;
+  height: 200px;
+  margin: 5px;
+}
+
+.restro-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
   padding: 10px;
 }
