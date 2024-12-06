@@ -24,8 +24,9 @@
 
 .res-card {
   width: 200px;
-  height: 380px;
+  /* height: 450px; */
   padding: 5px;
+  margin: 5px;
 }
 
 .res-card:hover {
