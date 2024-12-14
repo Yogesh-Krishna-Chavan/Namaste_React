@@ -7,6 +7,10 @@ const Body = () => {
   //State variable
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
 
+  const [searchText, setSearchText] = useState("");
+
+  console.log("Rendered");
+
   useEffect(() => {
     fetchData();
     // console.log("UseEffect called");
@@ -34,31 +38,50 @@ const Body = () => {
     return <Shimmer />;
   }
 
-  return (
-    listOfRestaurants.length ===
-    0 ? (<Shimmer />) : (
-      <div className="body">
-        <div className="filter">
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
+    <div className="body">
+      <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          ></input>
           <button
-            className="filter-btn"
             onClick={() => {
-              //Filter
-              const filteredList = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4
-              );
-              setListOfRestraunt(filteredList);
+              //Filter restaurant and update UI
+              //Search Text
+              console.log(searchText);
             }}
           >
-            Top Rated Restaurant
+            Search
           </button>
         </div>
-        <div className="restro-container">
-          {listOfRestaurants.map((restaurant) => (
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-          ))}
-        </div>
+
+        <button
+          className="filter-btn"
+          onClick={() => {
+            //Filter
+            const filteredList = listOfRestaurants.filter(
+              (res) => res.info.avgRating > 4
+            );
+            setListOfRestraunt(filteredList);
+          }}
+        >
+          Top Rated Restaurant
+        </button>
       </div>
-    )
+      <div className="restro-container">
+        {listOfRestaurants.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        ))}
+      </div>
+    </div>
   );
 };
 
