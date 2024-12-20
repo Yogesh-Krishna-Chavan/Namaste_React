@@ -7,7 +7,7 @@ const Body = () => {
   //State variable
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
 
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState(""); 
 
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
