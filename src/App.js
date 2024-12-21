@@ -67,8 +67,8 @@ const appRouter = createBrowserRouter([
     element: <AppLayout />,
   },
   {
-    path: "/About",
-    element: <AppLayout />,
+    path: "/about",
+    element: <About />,
   },
 ]);
 
