@@ -21,9 +21,14 @@ const ItemList = ({ items }) => {
                   item.card.info.defaultPrice / 100}
               </span>
             </div>
-            <p>{item.card.info.description}</p>
+            <p className="text-xs">{item.card.info.description}</p>
           </div>
-          <div className="w-3/12 p-4">
+          <div className="w-5/12 p-4">
+            <div className="absolute right-100">
+              <button className="p-1 mx-5 bg-black text-white shadow-lg rounded-lg">
+                Add +
+              </button>
+            </div>
             <img src={CDN_URL + item.card.info.imageId}></img>
           </div>
         </div>
