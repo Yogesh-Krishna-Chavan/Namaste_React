@@ -7,7 +7,7 @@ const Body = () => {
   //State variable
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
 
-  const [searchText, setSearchText] = useState(""); 
+  const [searchText, setSearchText] = useState("");
 
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
@@ -20,7 +20,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6309399&lng=73.7378149&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.624922547673854&lng=73.72566897422075&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     console.log(json);
