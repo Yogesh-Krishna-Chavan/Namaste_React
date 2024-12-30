@@ -5,7 +5,7 @@ import { Menu_API } from "../utils/constant";
 const RestaurantManu = () => {
   const [restInfo, setResInfo] = useState(null);
 
-  const {resId} = useParams();
+  const { resId } = useParams();
 
   useEffect(() => {
     fetchMenu();
@@ -13,7 +13,7 @@ const RestaurantManu = () => {
 
   const fetchMenu = async () => {
     const data = await fetch(
-     Menu_API + resId +"&catalog_qa=undefined&submitAction=ENTER"
+      Menu_API + resId + "&catalog_qa=undefined&submitAction=ENTER"
     );
     const json = await data.json();
     console.log(json);
@@ -40,8 +40,10 @@ const RestaurantManu = () => {
       <h2>Menu</h2>
       <ul>
         {itemCards.map((item) => (
+          //Key added
           <li key={item.card.info.id}>
-            {item.card.info.name} -{" Rs"} {item.card.info.price / 100}
+            {item.card.info.name} -{" Rs"}{" "}
+            {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
           </li>
         ))}
       </ul>
