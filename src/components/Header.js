@@ -13,39 +13,40 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-orange-200 shadow-2xl">
       <div>
-        {" "}
         <Link to="/">
-          <img className="logo" src={LOGO_URL} />
+          <img className="w-52" src={LOGO_URL} />
         </Link>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
+      <div className="flex items-center ">
+        <ul className="flex p-4 m-4">
+          <li className="px-6">Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
+          <li className="px-6">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-6">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-6">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="px-6">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
-          <button
-            className="login"
-            onClick={() => {
-              btnNameReact === "Login"
-                ? setBtnNameReact("Logout")
-                : setBtnNameReact("Login");
-            }}
-          >
-            {btnNameReact}
-          </button>
+          <li className="px-6">Cart</li>
+          <li>
+            <button
+              className="bg-green-200 px-6 py-2 rounded-md"
+              onClick={() => {
+                btnNameReact === "Login"
+                  ? setBtnNameReact("Logout")
+                  : setBtnNameReact("Login");
+              }}
+            >
+              {btnNameReact}
+            </button>
+          </li>
         </ul>
       </div>
     </div>
