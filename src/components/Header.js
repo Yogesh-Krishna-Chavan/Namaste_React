@@ -13,7 +13,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="flex justify-between bg-orange-200 shadow-2xl">
+    <div className="flex justify-between bg-sky-200 shadow-2xl">
       <div>
         <Link to="/">
           <img className="w-52" src={LOGO_URL} />
@@ -37,7 +37,7 @@ const Header = () => {
           <li className="px-6">Cart</li>
           <li>
             <button
-              className="bg-green-200 px-6 py-2 rounded-md"
+              className="bg-green-300 px-6 py-2 rounded-md"
               onClick={() => {
                 btnNameReact === "Login"
                   ? setBtnNameReact("Logout")

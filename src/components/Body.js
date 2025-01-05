@@ -67,7 +67,7 @@ const Body = () => {
             }}
           ></input>
           <button
-            className="px-4 py-1.5 bg-green-200 m-3 rounded-md"
+            className="px-4 py-1.5 bg-green-300 m-3 rounded-md"
             onClick={() => {
               //Filter restaurant and update UI
               //Search Text
@@ -85,7 +85,7 @@ const Body = () => {
         </div>
         <div className="search m-4 p-4 flex items-center">
           <button
-            className="px-4 py-1.5 bg-green-200 rounded-md"
+            className="px-4 py-1.5 bg-green-300 rounded-md"
             onClick={() => {
               //Filter
               const filteredList = listOfRestaurants.filter(
@@ -98,7 +98,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="restro-container">
+      <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
