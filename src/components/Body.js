@@ -13,7 +13,7 @@ const Body = () => {
 
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
-  console.log("Rendered");
+  console.log("Rendered", listOfRestaurants);
 
   useEffect(() => {
     fetchData();

@@ -9,11 +9,11 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
-    console.log("Use_Effect Called");
+    console.log("Use_Effect Called"); 
   }, []);
 
   return (
-    <div className="flex justify-between bg-sky-200 shadow-2xl">
+    <div className="flex justify-between bg-pink-100 shadow-2x">
       <div>
         <Link to="/">
           <img className="w-52" src={LOGO_URL} />
