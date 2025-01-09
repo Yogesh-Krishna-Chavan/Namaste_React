@@ -49,7 +49,7 @@ const RestaurantManu = () => {
       </ul> */}
 
       {categories.map((category, index) => (
-        //Controlled componrnt
+        //Controlled component
         <RestaurantCategory
           key={category?.card?.card.title}
           data={category?.card?.card}
