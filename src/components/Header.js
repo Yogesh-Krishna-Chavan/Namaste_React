@@ -42,7 +42,9 @@ const Header = () => {
           <li className="px-6">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-6 font-bold">Cart ({cartItems.length} items)</li>
+          <li className="px-6 font-bold">
+            <Link to="/cart">Cart ({cartItems.length} items)</Link>
+          </li>
           <li>
             <button
               className="bg-green-300 px-6 py-2 rounded-md"
